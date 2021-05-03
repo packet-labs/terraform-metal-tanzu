@@ -1,12 +1,11 @@
 name: 'terraform'
-# This workflow verifies that the Terraform configs are valid, 
-# without running Google Anthos or building any Packet infrastructure.
+# This workflow verifies that the Terraform configs are valid.
 # https://learn.hashicorp.com/tutorials/terraform/automate-terraform
 
 on:
   push:
     branches:
-    - master
+    - main
   pull_request:
 
 jobs:
@@ -19,7 +18,7 @@ jobs:
     strategy:
       matrix:
         os: [ubuntu-latest]
-        tf: [0.13.2]
+        tf: [0.15.1]
     steps:
     - name: Checkout from Github
       uses: actions/checkout@v2

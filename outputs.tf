@@ -3,7 +3,8 @@ output "VPN_Endpoint" {
 }
 
 output "VPN_PSK" {
-  value = module.vsphere.vpn_psk
+  sensitive = true
+  value     = module.vsphere.vpn_psk
 }
 
 output "VPN_User" {
@@ -11,8 +12,8 @@ output "VPN_User" {
 }
 
 output "VPN_Password" {
-  # TODO the typo is corrected in the next module version (currently unreleased)
-  value = module.vsphere.vpn_password
+  sensitive = true
+  value     = module.vsphere.vpn_password
 }
 
 output "vCenter_FQDN" {
@@ -24,11 +25,13 @@ output "vCenter_Username" {
 }
 
 output "vCenter_Password" {
-  value = module.vsphere.vcenter_password
+  sensitive = true
+  value     = module.vsphere.vcenter_password
 }
 
 output "vCenter_Appliance_Root_Password" {
-  value = module.vsphere.vcenter_root_password
+  sensitive = true
+  value     = module.vsphere.vcenter_root_password
 }
 
 #output "KSA_Token_Location" {
